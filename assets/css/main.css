@@ -88,7 +88,7 @@ html, body {
 }
 
 .walkers-list.dudes{
-    animation: vmarquee 20s linear infinite;
+    animation: vmarquee 20s ease-in-out infinite;
 }
 
 .walkers-list.dudes:hover {
@@ -173,7 +173,7 @@ html, body {
 /* Animations */
 
 @keyframes vmarquee {
-  0% { top: -100%; }
+  0% { top: 100%; }
   50% { top: 0%; }
-  100% { top: -100%; }
+  100% { top: 100%; }
 }
