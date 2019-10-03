@@ -61,7 +61,7 @@ html, body {
   width: 100%;
 }
 
-.walkers-list {
+.after-white{
   position: relative;
   height: 435px;
   width: calc(100% + 80px);
@@ -72,7 +72,7 @@ html, body {
   box-sizing: border-box;
 }
 
-.walkers-list::after {
+.after-white::after {
   position: absolute;
   content: '';
   top: 0;
@@ -81,6 +81,18 @@ html, body {
   height: 100%;
   background: rgb(255,255,255);
   background: linear-gradient(180deg, rgba(255,255,255,0) 20%, rgba(255,255,255,1) 100%)
+}
+
+.walkers-list {
+  position: relative;
+}
+
+.walkers-list.dudes{
+    animation: vmarquee 20s linear infinite;
+}
+
+.walkers-list.dudes:hover {
+  animation-play-state: paused;
 }
 
 .walkers-list p {
@@ -156,4 +168,12 @@ html, body {
 .__zindex {
   position: relative;
   z-index: 2;
+}
+
+/* Animations */
+
+@keyframes vmarquee {
+  0% { top: -100%; }
+  50% { top: 0%; }
+  100% { top: -100%; }
 }

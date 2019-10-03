@@ -19,7 +19,6 @@ $(".randomize").click(function() {
 
     $('.randomize').html('Haciendo magia...');
 
-
     setTimeout(function(){
       $('.winner-name').addClass('active');
       $('.overlay-confeti').addClass('active');
@@ -77,8 +76,15 @@ $('#walker-add').on('click',function(e){
       $('.walkers-list').append('<p>' + walkers[w].walker + '</p>');
     }
 
+
     //Clean form
     $('#parcipant-name').val('');
+
+    if ( walkers.length > 8 ){
+      $('.walkers-list').addClass('dudes');
+    } else {
+      $('.walkers-list').removeClass('dudes');
+    }
 
   } else {
     //console.log('Walker info cant\'t be empty.');
