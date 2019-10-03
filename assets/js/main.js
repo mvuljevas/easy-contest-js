@@ -15,7 +15,7 @@ $(".randomize").click(function() {
     $('.winner-name').removeClass('active');
     $('.overlay-confeti').removeClass('active');
 
-    UIkit.notification('¡Aguarda mientras el universo escoge un ganador!', {status: 'primary', timeout: 2500, pos: 'top-right'});
+    UIkit.notification('¡Aguarda mientras el universo escoge un ganador!', {status: 'primary', timeout: 2500});
 
     $('.randomize').html('Haciendo magia...');
 
@@ -23,19 +23,19 @@ $(".randomize").click(function() {
       $('.winner-name').addClass('active');
       $('.overlay-confeti').addClass('active');
       $('.randomize').html('¡Otra Vez!');
-      confetti.start(10000);
-
+      confetti.start();
     }, 3000);
 
   } else {
     //console.log('No hay Participantes');
-    UIkit.notification('No hay Participantes', {status: 'danger', pos: 'top-right'});
+    UIkit.notification('No hay Participantes', {status: 'danger'});
   }
 });
 
 $(".overlay-confeti").click(function() {
     $('.winner-name').removeClass('active');
     $('.overlay-confeti').removeClass('active');
+    confetti.stop(); 
 });
 
 //Add Walker
@@ -88,7 +88,7 @@ $('#walker-add').on('click',function(e){
 
   } else {
     //console.log('Walker info cant\'t be empty.');
-    UIkit.notification('¡El campo de participantes no puede estar vacío!', {status: 'danger', pos: 'top-right'});
+    UIkit.notification('¡El campo de participantes no puede estar vacío!', {status: 'danger'});
   }
 
   e.preventDefault();
