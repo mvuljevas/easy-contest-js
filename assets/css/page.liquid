@@ -1,0 +1,12 @@
+{%- include '__assets_cdn_url' -%}
+<div class="main-page-wrapper">
+   <!-- MAIN CONTENT AREA -->
+   {%- include 'page_heading', page_title:page.title -%}
+   <div class="container">
+      <div class="row">
+         <div class="site-content col-sm-12" role="main">
+            {{ page.content }}
+         </div>
+      </div>
+   </div>
+</div>
